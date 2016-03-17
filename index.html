@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ES6features - What do you have to know about the current and next state of Javascript.</title>
+    <link href="assets/dist/all.min.css" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEISkDBCEpD0QhKN8EISjwQ+BocEPgKB8D4KgPBCDowwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQg6RHEISkpBCEo9wQg6T9EIKj/xGGp/8Xnsf/FZW8/xGJrP0PgqLcD4GhpBCDpEgAAAAAAAAAAAAAAAAQg6QBEIOkvxCEpP8QhKT/DYKj/wV+oP8Lg6X/Fq7e/xKx5P8Yr9//GqnW/xSUu/8QgaHBEIOjAgAAAAAAAAAAEIOjBhGDpM8HgKL/An2g/xOEpf9CmLH/MJSx/zy43/9Txen/I7Th/xCy5P8TpND/EIGh0A+DowYAAAAAAAAAAA+Eow4KgaLgQpqy/5rAy//P2Nv/9Ofj/2Kswf9vyeT//////+35/P+z5/f/PbTZ/wmAouIQg6QQAAAAAAAAAAAQg6QfAn6g8ZzCzP/r5OL/q8jQ/+De3v9qrsH/H63Z/3fR7v+45/X//////3nM5P8Bf6LyEIKjIQAAAAAAAAAAEIOkMA6Co/kvka3/IIqp/wuBo//O19n/crHD/xir2P8itOP/Banc/7ro9/+V1+z/AoGm+hCCozIAAAAAAAAAABCDpEIRhKT+CYGi/wh/of8UhKX/0dja/2Sswv9qx+T/+////9Dv+f/0/P//oN3w/wOEqf8PgaJDAAAAAAAAAAAQg6RUEIOk/xCDpP8NgqP/FIWl/9DY2v9krMH/bcjk///////S7/j/7vr9/6Hg8/8GiK7/D4GhVgAAAAAAAAAAEIOkZhCDpP8Qg6T/DYKj/xSFpf/R2Nr/ZK3C/3HJ5f/k9/3/HLHg/yCy4f8quOT/Eo+z/w+BoWcAAAAAAAAAABCDo3wQg6P/EIOk/w2Co/8UhqX/0dja/2Stwv9xyeX/5Pf9/xqx4P8OrN//ErDi/xSTuf8PgaB/AAAAABCDpAMQg6SVEIOk/xCDpP8NgqP/FIWl/9jc3P9orsP/b8jk///////J7ff/yu34/63m+P8Zmb7/DX+flxCDowUPg6MOEIOjpxCDo/8Qg6P/DoOj/xSFpf+yy9H/V6e+/1vC4v/d9Pz/3PP6/+D1+//J8Pv/IZ7F/wt/n6gQg6QQEIOkGxCDpLkQg6P/EIOj/xCEpP8QhKT/EIOj/xGGp/8br97/HrXm/x205P8dtOT/H7fp/xmhzP8PgaC7D4KjHQ6CozIOgqPQDoKj/w6Co/8OgqP/DoKj/wyAov8Ng6X/FJ7J/xSizf8Uocz/FKHM/xWjzv8UmL//DoGh0xKFpTUkka1QGYmozBaIp+AXiKfcF4in3BeIp9wXiKfcF4in3BeGpNwXhaTcF4ak3BeGpNwXhaTcFoal4BqJqc0ok69Q/n8AAOAHAADAAwAAwAMAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMADAACAAQAAgAEAAIABAACAAQAAgAEAAA==" rel="icon" type="image/x-icon" />
+  </head>
+
+  <body data-spy="scroll" data-target=".sidebar" data-offset="200">
+    <header class="site-header sticky navbar-transparent">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+              <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+
+            <a class="navbar-brand" href="http://es6features.com"><strong>ES6</strong> features.com</a>
+          </div>
+      
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="http://dev.com">Coffee for Developers <i class="fa fa-coffee"></i></a></li>
+              <li class="active"><a href="https://twitter.com/dev_talk">more JS on Twitter <i class="fa fa-twitter"></i></a></li>
+              <li class="active"><a href="https://github.com/katysovas/ES6-Features">Github <i class="fa fa-github"></i></a></li>
+            </ul>
+          </div>         
+        </div>
+      </nav>
+      <div class="banner auto-size" style="background-color: #5cc7b2">
+        <div class="container text-white">
+          
+          <span class="subtitle">What do you have to know about the current and next state of Javascript.<span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="row">
+        <aside class="col-sm-3 sidebar sidebar-line">
+          <ul class="nav sidenav sticky">  
+            <li>
+              <a href="#explore">Explore ES6</a>
+              <ul>
+                <li><a href="#variables">Variables</a></li>
+                <li><a href="#arrows">Arrow Functions</a></li>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#objectLiterals">Object Literals</a></li>
+                <li><a href="#templateStrings">Template Strings</a></li>
+                <li><a href="#destructuring">Destructuring</a></li>
+                <li><a href="#additions">Math, Number, String, Array and Object APIs</a></li>
+                <li><a href="#default">Default, Rest and Spread</a></li>
+                <li><a href="#for">forEach, for-in and for-of</a></li>
+                <li><a href="#generators">Generators</a></li>
+                <li><a href="#unicode">Unicode</a></li>
+                <li><a href="#modules">Modules</a></li>
+                <li><a href="#maps">Maps, WeakMaps and Sets</a></li>
+                <li><a href="#proxies">Proxies</a></li>
+                <li><a href="#symbols">Symbols</a></li>
+                <li><a href="#subclasses">Subclassable Built-ins</a></li>
+                <li><a href="#promises">Promises</a></li>
+              </ul>
+            </li>          
+          </ul>
+
+        </aside>
+      
+        <article class="col-sm-9 main-content" role="main">   
+
+          <section>
+            <h2 id="explore"><span class="small-font"><i class="fa fa-link"></i></span>Explore ES6</h2>
+            <p>ES6, officially called ECMAScript 6, is upon us. ES6 represents the biggest change to the language since ES3 was released in 1999. You can take advantage of ES6 features today using transpilers, like Babel. Babel is an ES6 to ES5 transpiler that supports all of the ES6 features. If you are using something like Browserify in your JavaScript build pipeline, adding Babel transpilation takes only a couple of minutes. There is, of course, support for pretty much every common Node.js build system like Gulp, Grunt and many others. Here is the list of some basic features ES6 provides - the official specification can be found <a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf" target="_blank">here</a>. The code examples are mostly executable, some were copied from open repositories. The work on this page is still in progress, hence I do apologize for any bugs or errors found. Thank you for reading!</p>
+            
+            <h3 id="variables"><span class="small-font"><i class="fa fa-link"></i></span>Variables</h3>
+            <p>In ES5, <code>var x</code> declares variable x in execution context. Usually it is declared in global scope. If the declaration appears in a function - a local variable is declared. Within the body of a function, a local variable takes precedence over a global variable with the same name.</p>
+            <p>In ES6, we have <code>let</code> and <code>const</code>, which are block-scoped naturally - their scopes are the innermost enclosing blocks. The difference between these two: <code>const</code> variable can't be reassigned.</p>                     
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4">
+                      <span>ES5:</span>
+                      <div class="es5 es5-variables"></div>
+                    </div>
+                    <div class="col-xs-4">
+                      <span>ES6:</span>
+                      <div class="es5 es6-variables"></div>            
+                    </div>
+                </div>
+            </div>
+
+            <span class='warning'><i class="fa fa-thumbs-down"></i>Don't use <code>typeof</code> with <code>let</code> and <code>const</code> in ES6, you will get an error.</span>
+            <span class='tip'><i class="fa fa-thumbs-up"></i>Use <code>const</code> if you don't have to reassign the value, otherthise <code>let</code> will take care of scoping. Forget <code>var</code> !</span>
+            <span class='link'><i class="fa fa fa-link"></i><a target="_blank" href="https://davidwalsh.name/for-and-against-let">https://davidwalsh.name/for-and-against-let</a></span>            
+                      
+            <h3 id="arrows"><span class="small-font"><i class="fa fa-link"></i></span>Arrow Functions</h3>
+            <p>Arrows are a function shorthand using the <code>=></code> syntax. They are syntactically similar CoffeeScript.
+            Unlike functions, they behave differently in a number of important ways:
+            <ul>
+              <li>Lexical <code>this</code> binding – The value of <code>this</code> inside of the function is determined by where the arrow function is defined not where it is used.</li>
+              <li>Can’t change <code>this</code> – The value of <code>this</code> inside of the function can’t be changed, it remains the same value throughout the entire lifecycle of the function.</p></li>
+              <li>Arrow functions are designed to be lightweight and cannot be used as generators. Using the <code>yield</code> keyword in ES6 will throw an error. Use ES6 generators instead.
+            </ul>
+            <p>Arrow functions are especially handy for short callbacks that only return results of expressions.</p>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4">
+                      <span>ES5:</span>
+                      <div class="es5 es5-arrows"></div>
+                    </div>
+                    <div class="col-xs-4">
+                      <span>ES6:</span>
+                      <div class="es5 es6-arrows"></div>            
+                    </div>
+                </div>
+            </div>
+
+            <span class='warning'><i class="fa fa-thumbs-down"></i>Not newable – Arrow functions cannot be used a constructors and will throw an error when used with <code>new</code></span>
+            <span class='tip'><i class="fa fa-thumbs-up"></i>No more <code>_this</code>, <code>self</code> and other helper variables!</span>
+            <span class='link'><i class="fa fa fa-link"></i><a target="_blank" href="http://jsrocks.org/2014/10/arrow-functions-and-their-scope/">http://jsrocks.org/2014/10/arrow-functions-and-their-scope/</a></span>
+            
+            <h3 id="classes"><span class="small-font"><i class="fa fa-link"></i></span>Classes</h3>
+            <p>ES6 classes are a simple sugar over the prototype-based OO pattern. They support prototype-based inheritance, super calls, instance and static methods and constructors.</p>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4">
+                      <span>ES5:</span>
+                      <div class="es5 es5-classes"></div>
+                    </div>
+                    <div class="col-xs-4">
+                      <span>ES6:</span>
+                      <div class="es5 es6-classes"></div>            
+                    </div>
+                </div>
+            </div>
+
+            <span class='tip'><i class="fa fa-thumbs-up"></i>Factory functions and built in prototypal OO do amazing job, do we really need classes in Javascript?</span>
+            <span class='warning'><i class="fa fa-thumbs-down"></i>Using Backbone.js? Read this: <a target="_blank" href="http://benmccormick.org/2015/04/07/es6-classes-and-backbone-js/">Why Backbone.js and ES6 Classes Don't Mix</a></span>
+            <span class='link'><i class="fa fa fa-link"></i><a target="_blank" href="https://medium.com/javascript-scene/how-to-fix-the-es6-class-keyword-2d42bb3f4caf#.uwo56ld4t">https://medium.com/javascript-scene/how-to-fix-the-es6-class-keyword-2d42bb3f4caf#.uwo56ld4t</a></span>
+
+            <h3 id="objectLiterals"><span class="small-font"><i class="fa fa-link"></i></span>Object Literals</h3>
+            <p>In ES5, methods are properties whose values are functions. ES6 makes declaring object literals even more succinct by providing shorthand syntax for initializing properties from variables and defining function methods. It also enables the ability to have computed property keys in an object literal definition.
+            </p>
+          
+            <div class="container">
+              <div class="row">
+                  <div class="col-xs-4">
+                    <span>ES5:</span>
+                    <div class="es5 es5-objectLiterals"></div>
+                  </div>
+                  <div class="col-xs-4">
+                    <span>ES6:</span>
+                    <div class="es5 es6-objectLiterals"></div>            
+                  </div>
+              </div>
+            </div>
+
+            <span class='tip'><i class="fa fa-thumbs-up"></i>One use case for property value shorthands are multiple return values!</span>
+            <span class='link'><i class="fa fa fa-link"></i><a target="_blank" href="https://ponyfoo.com/articles/es6-object-literal-features-in-depth">https://ponyfoo.com/articles/es6-object-literal-features-in-depth</a></span>
+
+            <h3 id="templateStrings"><span class="small-font"><i class="fa fa-link"></i></span>Template Strings</h3>
+            <p>Template literals help working with strings and string templates easier. You wrap your text in `backticks` and you’ll get the features described below.
+            </p>
+          
+            <div class="container">
+              <div class="row">
+                  <div class="col-xs-4">
+                    <span>ES5:</span>
+                    <div class="es5 es5-templateStrings"></div>
+                  </div>
+                  <div class="col-xs-4">
+                    <span>ES6:</span>
+                    <div class="es5 es6-templateStrings"></div>            
+                  </div>
+              </div>
+            </div>
+
+            <span class='tip'><i class="fa fa-thumbs-up"></i>ES5 Hack - <a target="_blank" href="https://medium.com/@zackargyle/es6-like-template-strings-in-10-lines-a88caca6f36c#.5j3ly9ytu">https://medium.com/@zackargyle/es6-like-template-strings-in-10-lines-a88caca6f36c#.5j3ly9ytu</a></span>
+            
+            <h3 id="destructuring"><span class="small-font"><i class="fa fa-link"></i></span>Destructuring</h3>
+            <p>Destructuring allows to extract values from data stored in objects and Arrays. Destructuring is fail-soft, similar to standard object lookup foo["bar"], producing undefined values when not found.
+            </p>
+          
+            <div class="container">
+              <div class="row">
+                  <div class="col-xs-8">
+                    <span>ES6:</span>
+                    <div class="es5 es6-destructing"></div>            
+                  </div>
+              </div>
+            </div>
+
+            <span class='tip'><i class="fa fa-thumbs-up"></i>Returning multiple values from a function is a lot more practical when you can destructure the result!</span>
+            <span class='link'><i class="fa fa fa-link"></i><a target="_blank" href="http://fitzgeraldnick.com/weblog/50/">http://fitzgeraldnick.com/weblog/50/</a></span>
+
+            <h3 id="additions"><span class="small-font"><i class="fa fa-link"></i></span>Math, Number, String, Array and Object APIs</h3>
+            <p>Many new library additions, including core Math libraries, Array conversion helpers, String helpers, and Object.assign for copying.
+            </p>
+          
+            <div class="container">
+              <div class="row middle">
+                  <div class="col-xs-8">
+                    <span>ES6:</span>
+                    <div class="es5 es6-additions"></div>            
+                  </div>
+              </div>
+            </div>
+
+            <h3 id="default"><span class="small-font"><i class="fa fa-link"></i></span>Default, Rest and Spread</h3>
+            <p><strong>The default</strong> function parameters allow formal parameters to be initialized with default values if no value or <code>undefined</code> is passed. <strong>The rest</strong> parameters allow your functions to have variable number of arguments without using the arguments object. The rest parameter is an instance of <code>Array</code> so all the array methods just work. <strong>The spread</strong> operator can be used as a butter knife alternative over using <code>.apply</code>. There is no need for a context either. You just append three dots <code>...</code> to the array, just like with the rest parameter. The spread operator can turn the contents of its operand into <code>Array</code> elements.</p>
+          
+            <div class="container">
+              <div class="row middle">
+                  <div class="col-xs-4">
+                    <span>ES5:</span>
+                    <div class="es5 es5-default"></div>
+                  </div>
+                  <div class="col-xs-4">
+                    <span>ES6:</span>
+                    <div class="es5 es6-default"></div>            
+                  </div>
+              </div>
+            </div>
+
+            <span class='warning'><i class="fa fa-thumbs-down"></i>Spread operator are only standardized for <code>array</code> literals, not <code>object</code> literals.</span>
+            <span class='link'><i class="fa fa fa-link"></i><a target="_blank" href="https://medium.com/@zwacky/3-examples-for-es6-spread-operator-magic-19801a555456#.daibgqbyc">https://medium.com/@zwacky/3-examples-for-es6-spread-operator-magic-19801a555456#.daibgqbyc</a></span>
+
+            <h3 id="for"><span class="small-font"><i class="fa fa-link"></i></span>forEach, for-in and for-of</h3>
+            <p><code>forEach</code> is an method that is available only in Array objects. It allows you to iterate through elements of an array. When invoked it takes a callback function and invokes the callback once for every array element. The callback can access both index and value of the array elements. <code>forEach</code> is available only for looping arrays.
+            </p>
+            <p>
+            <code>for in</code> is used to loop through properties of an object. It can be any object. It allows you to access the keys of the object but doesn’t provide reference to the values. In JavaScript object properties themselves have internal properties. One of the internal properties is <code>[[Enumerable]]</code>. for in will only walkthrough a property if it has <code>[[Enumerbale]] </code> set to <code>true</code>. It's not used to iterate elements of an collection rather used to iterate properties of objects.
+            </p>
+            <p>
+            <code>for of</code> is a new way for iterating collections. Earlier you had to use <code>for</code> or <code>while</code> loop to iterate through elements of an collection. For <code>for of</code> to work on an collection, the collection must have an <code>[Symbol.iterator] </code> property.</p>
+          
+            <div class="container">
+              <div class="row">
+                  <div class="col-xs-4">
+                    <span>ES5:</span>
+                    <div class="es5 es5-for"></div>
+                  </div>
+                  <div class="col-xs-4">
+                    <span>ES6:</span>
+                    <div class="es5 es6-for"></div>            
+                  </div>
+              </div>
+            </div>
+
+            <span class='tip'><i class="fa fa-thumbs-up"></i>Don't use <code>for-in</code> unless you use it with safeguards or are at least aware of why it might bite you. Use <code>for-of</code> for loops (ES6), <code>forEach</code> for Arrays (ES5) or old-fashioned <code>for</code> loop for any situation.</span>
+            <span class='warning'><i class="fa fa-thumbs-down"></i><code>for-in</code> could iterate in an arbitrary order. Furthermore, other properties on the array (such as length) could also be included in the iteration (older version of Internet Explorer did this). Finally, the <code>i</code> iteration variable is a <code>String</code>, not a <code>Number</code>.</span>
+            <span class='link'><i class="fa fa fa-link"></i><a target="_blank" href="https://strongloop.com/strongblog/introduction-to-es6-iterators/">https://strongloop.com/strongblog/introduction-to-es6-iterators/</a></span>
+
+
+            <h3 id="generators"><span class="small-font"><i class="fa fa-link"></i></span>Generators</h3>
+            <p>Generators introduce functions that can be paused and resumed. The first thing to notice is the star by the function name. This simply states that this is a generator. The other new syntax is the <code>yield</code> keyword, which tells the generator to pause when it gets to this point.</p>
+          
+            <div class="container">
+              <div class="row">
+                  <div class="col-xs-8">
+                    <span>ES6:</span>
+                    <div class="es5 es6-generators"></div>            
+                  </div>
+              </div>
+            </div>
+
+            <span class='tip'><i class="fa fa-thumbs-up"></i>Generators can dramatically improve and simplify the way we write asynchronous code.</span>
+            <span class='link'><i class="fa fa fa-link"></i><a target="_blank" href="http://www.2ality.com/2015/03/es6-generators.html">http://www.2ality.com/2015/03/es6-generators.html</a></span>
+
+            <h3 id="unicode"><span class="small-font"><i class="fa fa-link"></i></span>Unicode</h3>
+            <p>ES6, like earlier versions, supports four-digit Unicode escape sequences. They look like this: <code>\u212A</code>. You can use them in strings or in variable names. But then, for a character like <code>U+13021</code>, the Egyptian hieroglyph of a guy standing on his head, there's a slight problem. The number 13021 has five digits and five is more than four :)
+            </p>
+          
+            <div class="container">
+              <div class="row">
+                  <div class="col-xs-4">
+                    <span>ES5:</span>
+                    <div class="es5 es5-unicode"></div>
+                  </div>
+                  <div class="col-xs-4">
+                    <span>ES6:</span>
+                    <div class="es5 es6-unicode"></div>            
+                  </div>
+              </div>
+            </div>
+
+            <span class='warning'><i class="fa fa-thumbs-down"></i>Avoid using unicode if possible in ES6, it may break or change existing ES5 regex.</span>
+            <span class='link'><i class="fa fa fa-link"></i><a target="_blank" href="https://mathiasbynens.be/notes/javascript-unicode">https://mathiasbynens.be/notes/javascript-unicode</a></span>
+
+
+
+            <h3 id="modules"><span class="small-font"><i class="fa fa-link"></i></span>Modules</h3>
+            <p>In ES6 each module is defined in its own file. The functions or variables defined in a module are not visible outside unless you explicitly export them. This means that you can write code in your module and only export those values which should be accessed by other parts of your app. To export certain variables from a module you just use the keyword <code>export</code>. Similarly, to consume the exported variables in a different module you use <code>import</code>.
+
+            </p>
+          
+            <div class="container">
+              <div class="row middle">
+                  <div class="col-xs-8">
+                    <span>ES6:</span>
+                    <div class="es5 es6-modules"></div>            
+                  </div>
+              </div>
+            </div>
+
+            <span class='tip'><i class="fa fa-thumbs-up"></i>Tools such as browserify or webpack let you use ES6 syntax to create modules, making the code you write future-proof.</span>
+            <span class='link'><i class="fa fa fa-link"></i><a target="_blank" href="http://www.sitepoint.com/understanding-es6-modules/">http://www.sitepoint.com/understanding-es6-modules/</a></span>
+
+            <h3 id="maps"><span class="small-font"><i class="fa fa-link"></i></span>Maps, WeakMaps and Sets</h3>
+            <p>Developers usually just use regular JavaScript objects when they want maps. Stuff is mapped in an object by using strings as a key and this is possible with any kind of Object in Javascript.
+            </p>
+            <p>WeakMaps are different from Maps: you can only use objects as keys for a WeakMap - no numbers, no strings or other primitive types as keys. Objects used as keys by a WeakMap can be garbage collected if there are no other references to the object elsewhere in your application. Another important difference is that WeakMaps only have a subset of the methods maps have and cannot be iterated over in a <code>for...of</code> loop. The methods a WeakMap has are limited, to <code>get</code>,<code>set</code>, <code>has</code>, <code>delete</code> and <code>clear</code>.
+            </p>
+            <p>
+            Set is a unique list of values enumerable in insertion order. It does not provide set operation functionality like finding differences, intersections and unions. It’s simply a unique list.</p>
+          
+            <div class="container">
+              <div class="row middle">                  
+                  <div class="col-xs-8">
+                    <span>ES6:</span>
+                    <div class="es5 es6-maps"></div>            
+                  </div>
+              </div>
+            </div>
+
+            <span class='tip'><i class="fa fa-thumbs-up"></i>Map entries are always iterated in insertion order. This is in contrast with <code>Object.keys</code> loops which follow an arbitrary order.</span>
+            <span class='link'><i class="fa fa fa-link"></i><a target="_blank" href="http://www.2ality.com/2015/01/es6-maps-sets.html">http://www.2ality.com/2015/01/es6-maps-sets.html</a></span>
+
+            <h3 id="proxies"><span class="small-font"><i class="fa fa-link"></i></span>Proxies</h3>
+            <p>ES6 proxies sit between your code and an object. A proxy allows you to perform meta-programming operations such as intercepting a call to inspect or change an object’s property. Proxy can be helpful for libraries which implement data binding. Because a handler can be hooked to the data model, there is no need to use an alternative syntax (e.g. explicit set to change a value) or to continuously track the change (e.g. dirty state) to modify the model.
+            </p>      
+          
+            <div class="container">
+              <div class="row middle">                  
+                  <div class="col-xs-8">
+                    <span>ES6:</span>
+                    <div class="es5 es6-proxies"></div>            
+                  </div>
+              </div>
+            </div>
+
+            <span class='tip'><i class="fa fa-thumbs-up"></i>Think at least twice before using proxies - more often than not they are overkill, and there is usually a simpler and more efficient way to achieve the same thing.</span>
+            <span class='link'><i class="fa fa fa-link"></i><a target="_blank" href="https://ponyfoo.com/articles/es6-proxies-in-depth">https://ponyfoo.com/articles/es6-proxies-in-depth</a></span>
+
+            <h3 id="symbols"><span class="small-font"><i class="fa fa-link"></i></span>Symbols</h3>
+            <p>Symbols are a new primitive type, which allow properties to be keyed by either <code>string</code> (as in ES5) or <code>symbol</code>. You create symbols via the factory function <code>Symbol()</code>. It also has an optional string-valued parameter that lets you give the newly created Symbol a description. That description is used when the symbol is converted to a string (via toString() or String()). 
+            </p>      
+          
+            <div class="container">
+              <div class="row">                  
+                  <div class="col-xs-8">
+                    <span>ES6:</span>
+                    <div class="es5 es6-symbols"></div>            
+                  </div>
+              </div>
+            </div>
+
+            <span class='tip'><i class="fa fa-thumbs-down"></i>You can’t coerce(implicitly convert) symbols to strings, it will throw exception!</span>
+            <span class='link'><i class="fa fa fa-link"></i><a target="_blank" href="http://blog.keithcirkel.co.uk/metaprogramming-in-es6-symbols/">http://blog.keithcirkel.co.uk/metaprogramming-in-es6-symbols/</a></span>
+
+
+            <h3 id="subclasses"><span class="small-font"><i class="fa fa-link"></i></span>Subclassable Built-ins</h3>
+            <p>In ES6, the <code>extends</code> clause lets you create a subclass of an existing constructor, that will inherit the feature of having a stack trace in most engines.
+            </p>      
+          
+            <div class="container">
+              <div class="row middle">                  
+                  <div class="col-xs-8">
+                    <span>ES6:</span>
+                    <div class="es5 es6-subclasses"></div>            
+                  </div>
+              </div>
+            </div>
+
+            <span class='tip'><i class="fa fa-thumbs-down"></i>Edge has support for <code>super</code>, but not for subclassing builtins, and Safari does not support any of this functionality.</span>
+            <span class='link'><i class="fa fa fa-link"></i><a target="_blank" href="http://www.2ality.com/2013/03/subclassing-builtins-es6.html">Subclassing builtins in ECMAScript 6</a></span>
+
+            <h3 id="promises"><span class="small-font"><i class="fa fa-link"></i></span>Promises</h3>
+            <p>Promises finally have arrived natively in JavaScript! Promises give us a way to handle asynchronous processing in a more synchronous fashion. They represent a value that we can handle at some point in the future. And, better than callbacks, Promises give us guarantees about that future value, specifically, that no other registered handlers of that value can change it (the Promise is immutable) and that we are guaranteed to receive the value, regardless of when we register a handler for it, even if it's already resolved (no more race conditions).
+            </p>      
+          
+            <div class="container">
+              <div class="row middle">                  
+                  <div class="col-xs-8">
+                    <span>ES6:</span>
+                    <div class="es5 es6-promises"></div>            
+                  </div>
+              </div>
+            </div>
+
+            <span class='tip'><i class="fa fa-thumbs-up"></i>Having Promises natively, you can avoid using libraries like <a href="https://github.com/kriskowal/q" target="_blank">Q</a>, <a href="https://github.com/petkaantonov/bluebird" target="_blank">Bluebird</a>, <a href="https://github.com/tildeio/rsvp.js/" target="_blank">RSVP</a> and others.</span>
+            <span class='link'><i class="fa fa fa-link"></i><a target="_blank" href="http://jamesknelson.com/grokking-es6-promises-the-four-functions-you-need-to-avoid-callback-hell/">Introduction to ES6 Promises – The Four Functions You Need To Avoid Callback Hell</a></span>
+
+          </section>          
+        </article>
+      </div>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js"></script>
+    <script src="assets/dist/all.min.js"></script>     
+
+  </body>
+</html>
