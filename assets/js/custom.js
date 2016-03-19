@@ -77,7 +77,7 @@ var roots = arr.map(function (x) {
 console.log(roots);`;
 
 
-	let challenge2 = `var arr = [4, 9, 16];
+	let challenge2 = `let arr = [4, 9, 16];
 
 const roots = arr.map(x => Math.sqrt(x));
 
@@ -112,7 +112,7 @@ myInstance.sayAge();`;
     }
 }
 
-var myInstance = new someClass(27);
+let myInstance = new someClass(27);
 myInstance.sayAge();`;
 
 	bindExamples(editor, editor2, challenge, challenge2);
@@ -140,7 +140,7 @@ function f( x, y ) {
 
 	let challenge2 = `//Method Definition Shorthand
 
-var o = {
+let o = {
   method() {
     return "Hello!";
   }
@@ -304,7 +304,7 @@ function example_generators(){
     console.log(first + second);
 }
 
-var myGenerator = sayHelloWorld();
+let myGenerator = sayHelloWorld();
 
 myGenerator.next();         //{value: 'first param', done: 'false'}
 myGenerator.next('hello '); //{value: 'second param', done: 'false'}
@@ -398,9 +398,9 @@ function example_proxies(){
 	
 	let editor2 = $('.es6-proxies');
 
-	let challenge2 = `var engineer = { name: 'Joe Sixpack', salary: 50 };
+	let challenge2 = `let engineer = { name: 'Joe Sixpack', salary: 50 };
  
-var interceptor = {
+let interceptor = {
   set: function (receiver, property, value) {
     console.log(property, 'is changed to', value);
     receiver[property] = value;
@@ -480,12 +480,12 @@ function example_promises(){
 	let editor2 = $('.es6-promises');
 
 	let challenge2 = `// an immediately resolved promise
-var p2 = Promise.resolve("foo"); 
+let p2 = Promise.resolve("foo"); 
 
 // can get it after the fact, unlike events
 p2.then((res) => console.log(res)); 
 
-var p = new Promise(function(resolve, reject) {  
+let p = new Promise(function(resolve, reject) {  
    setTimeout(() => resolve(4), 2000);
 });
 
